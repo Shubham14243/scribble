@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from 'cors';
 
 import { connectToDb } from "./db/connection.js";
 import gameRoutes from "./routes/gameRoute.js";
@@ -10,6 +11,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {

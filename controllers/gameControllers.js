@@ -29,9 +29,9 @@ export const createGame = async (req, res) => {
             roomCode,
             players: [user],
             settings: {
-                maxPlayers: settings.maxPlayers || 8,
+                maxPlayers: settings.maxPlayers || 10,
                 maxRounds: settings.maxRounds || 3,
-                timePerRound: settings.timePerRound || 80,
+                timePerRound: settings.timePerRound || 60,
                 allowCustomWords: settings.allowCustomWords || false
             },
             customWords: settings.customWords || [],
